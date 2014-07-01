@@ -8,4 +8,32 @@ public class Grid {
 	public int[][] getGrid() { return mat; }
 	
 	public void setTile(int r, int c, int val) { mat[r][c] = val; }
+
+	public void shiftDown()
+	{
+		if ( (mat[3][0] != 0) || (mat[2][0] != 0) || (mat[1][0]!=0) || (mat[0][0] != 0) ) {
+			if (mat[3][0] == mat[2][0]) {
+				mat[3][0] = mat[3][0] * mat[2][0];
+				mat[2][0] = 0;
+			}
+			
+			
+		}
+	}
+	
+	public void shiftRight()
+	{
+		
+	}
+	
+	public void shiftUp()
+	{
+		
+	}
+	
+	public void shiftLeft()
+	{
+		
+	}
+
 }
