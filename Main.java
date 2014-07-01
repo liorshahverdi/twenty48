@@ -34,8 +34,14 @@ public class Main {
 		
 		int[][] mat = mainGrid.getGrid();
 		
-		mainGrid.setTile(1, 3, 2);
+		mainGrid.setTile(3, 3, 2);
 		mainGrid.setTile(2, 3, 2);
+		
+		printMat(mat);
+		
+		mainGrid.shiftDown();
+		
+		System.out.println("\n----------------\n");
 		
 		printMat(mat);
 	}
