@@ -30,15 +30,14 @@ public class Main {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Grid mainGrid = new Grid();
 		
-		int[][] mat = { {0,0,0,0} ,
-						{0,0,0,0} ,
-						{0,0,0,0} ,
-						{0,0,0,0} };
+		int[][] mat = mainGrid.getGrid();
 		
+		mainGrid.setTile(1, 3, 2);
+		mainGrid.setTile(2, 3, 2);
 		
-		printMat(mat);	
+		printMat(mat);
 	}
 
 }
