@@ -22,8 +22,8 @@ public class Main {
 		{
 		    for (int value : row)
 		    {
-		    	if (value==0) System.out.print("- ");
-		    	else System.out.print(value+" ");
+		    	if (value==0) System.out.print("-\t");
+		    	else System.out.print(value+"\t");
 		    }
 		    System.out.println();
 		}
@@ -34,16 +34,14 @@ public class Main {
 		
 		int[][] mat = mainGrid.getGrid();
 		
-		mainGrid.setTile(3, 3, 2);
-		mainGrid.setTile(2, 3, 2);
-		
+		mainGrid.setTile(0, 0, 2);
+		mainGrid.setTile(3, 0, 2);
 		printMat(mat);
+		System.out.println("\n-------\n");
 		
 		mainGrid.shiftDown();
-		
-		System.out.println("\n----------------\n");
-		
 		printMat(mat);
+		
 	}
 
 }
