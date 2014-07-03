@@ -34,9 +34,11 @@ public class Main {
 		
 		int[][] mat = mainGrid.getGrid();
 		
+		/*
 		mainGrid.setTile(3, 0, 2);
 		mainGrid.setTile(2, 0, 2);
 		mainGrid.setTile(1, 0, 4);
+		*/
 		
 		/*
 		mainGrid.setTile(3, 0, 2);

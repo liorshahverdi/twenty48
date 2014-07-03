@@ -22,7 +22,8 @@ public class Grid {
 						mat[0][0] = 0;
 					}
 					else {
-						
+						mat[2][0] = mat[1][0];
+						mat[1][0] = mat[0][0]; 
 					}
 				}
 			}	
