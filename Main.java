@@ -34,14 +34,41 @@ public class Main {
 		
 		int[][] mat = mainGrid.getGrid();
 		
-		mainGrid.setTile(0, 0, 2);
 		mainGrid.setTile(3, 0, 2);
+		mainGrid.setTile(2, 0, 2);
+		mainGrid.setTile(1, 0, 4);
+		
+		/*
+		mainGrid.setTile(3, 0, 2);
+		mainGrid.setTile(2, 0, 2);
+		mainGrid.setTile(1, 0, 4);
+		mainGrid.setTile(0, 0, 4);
+		//this works
+		*/
+		
+		/*
+		mainGrid.setTile(3,0,2);
+		mainGrid.setTile(0,0,2);
+		//this works
+		*/
+		
+		/*
+		mainGrid.setTile(3,0,2);
+		mainGrid.setTile(1,0,2);
+		//this works
+		*/
+		
+		/*
+		mainGrid.setTile(3,0,2);
+		mainGrid.setTile(2,0,2);
+		//this works
+		*/
+
 		printMat(mat);
 		System.out.println("\n-------\n");
 		
 		mainGrid.shiftDown();
 		printMat(mat);
-		
 	}
 
 }
