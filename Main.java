@@ -119,8 +119,9 @@ public class Main {
 		*/
 
 		mainGrid.setTile(0,0,2);
-		mainGrid.setTile(1,0,16);
+		mainGrid.setTile(1,0,4);
 		mainGrid.setTile(2,0,4);
+		mainGrid.setTile(3,0,8);
 
 		printMat(mat);
 		System.out.println("\n-------\n");

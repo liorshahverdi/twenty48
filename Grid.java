@@ -29,7 +29,13 @@ public class Grid {
 				}
 				else if (mat[2][0] == mat[1][0]) {
 					mat[2][0] += mat[1][0];
-					mat[1][0] = 0; 
+					if (mat[0][0] != 0) {
+						mat[1][0] = mat[0][0];
+						mat[0][0] = 0;
+					}
+					else {
+						mat[1][0] = 0;
+					} 
 				}
 			}	
 			else if (mat[1][0] != 0) {
@@ -105,7 +111,15 @@ public class Grid {
 							mat[0][0] = 0;
 						}
 					}
+					else {
+						mat[3][0] = mat[1][0];
+						mat[1][0] = 0;
+					}
 				} 
+				else {
+					mat[3][0] = mat[0][0];
+					mat[0][0] = 0;
+				}
 			}
 		}
 	}
