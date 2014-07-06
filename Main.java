@@ -97,20 +97,23 @@ public class Main {
 		//this works
 		*/
 
-		
+		/*
 		mainGrid.setTile(0,0,2);
 		mainGrid.setTile(1,0,2);
 		mainGrid.setTile(2,0,16);
-		//TODO
-		
+		//this works
+		*/
 
 		/*
 		mainGrid.setTile(1,0,2);
 		mainGrid.setTile(2,0,2);
 		mainGrid.setTile(3,0,16);
-		//TODO
+		//this works
 		*/
-		
+
+		mainGrid.setTile(2,0,16);
+		mainGrid.setTile(1,0,4);
+		mainGrid.setTile(0,0,16);
 
 		printMat(mat);
 		System.out.println("\n-------\n");
