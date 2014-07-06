@@ -50,6 +50,21 @@ public class Grid {
 						mat[1][0] = 0;
 						mat[0][0] = 0;
 					}
+					else {//[2][0] != [1][0] AND [3][0] is empty
+						if (mat[0][0] != 0) {
+							if (mat[1][0] == mat[0][0]) {
+								mat[3][0] = mat[2][0];
+								mat[2][0] = mat[1][0] + mat[0][0];
+								mat[1][0] = 0;
+								mat[0][0] = 0;
+							}
+						}
+						else {
+							mat[3][0] = mat[2][0];
+							mat[2][0] = mat[1][0];
+							mat[1][0] = 0;
+						}			
+					}
 				}
 			}
 			else {//mat[2][0] AND mat[3][0] empty

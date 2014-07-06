@@ -41,9 +41,11 @@ public class Main {
 		//this works
 		*/
 		
-		//mainGrid.setTile(1,0,2);
-		//mainGrid.setTile(2,0,2);
+		/*
+		mainGrid.setTile(1,0,2);
+		mainGrid.setTile(2,0,2);
 		//this works
+		*/
 		
 		/*
 		mainGrid.setTile(3, 0, 2);
@@ -84,12 +86,31 @@ public class Main {
 		*/
 		
 		/*
-		mainGrid.setTile(0,0,8);
+		mainGrid.setTile(2,0,2);
 		mainGrid.setTile(1,0,2);
 		//this works
 		*/
 		
+		/*
+		mainGrid.setTile(2,0,16);
+		mainGrid.setTile(1,0,2);
+		//this works
+		*/
 
+		
+		mainGrid.setTile(0,0,2);
+		mainGrid.setTile(1,0,2);
+		mainGrid.setTile(2,0,16);
+		//TODO
+		
+
+		/*
+		mainGrid.setTile(1,0,2);
+		mainGrid.setTile(2,0,2);
+		mainGrid.setTile(3,0,16);
+		//TODO
+		*/
+		
 
 		printMat(mat);
 		System.out.println("\n-------\n");
