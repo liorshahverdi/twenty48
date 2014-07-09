@@ -58,6 +58,10 @@ public class Grid {
 					if (mat[3][k] == mat[1][k]) {
 						mat[3][k] += mat[1][k];
 						mat[1][k] = 0;
+						if (mat[0][k] != 0) {
+							mat[2][k] = mat[0][k];
+							mat[0][k] = 0;
+						}
 					} 
 					else {//[3][k]taken [2][k]empty [1][k]taken
 						if (mat[1][k] == mat[0][k]) {
@@ -203,7 +207,7 @@ public class Grid {
 						mat[2][k] = 0;
 						if (mat[3][k] != 0) {
 							mat[1][k] = mat[3][k];
-							mat[3][k] =0;
+							mat[3][k] = 0;
 						}
 					} 
 					else {
