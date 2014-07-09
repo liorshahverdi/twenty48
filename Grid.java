@@ -152,7 +152,147 @@ public class Grid {
 		
 	}
 	
-
+	public void shiftUp()
+	{
+		for (int k=0; k<4; k++) {
+			if (mat[0][k] != 0) {
+				if (mat[1][k] != 0) {
+					if (mat[0][k] == mat[1][k]) {
+						mat[0][k] += mat[1][k];
+						mat[1][k] = 0;
+						if ( (mat[2][k] != 0) && (mat[3][k] != 0) && (mat[2][k] == mat[1][k]) ) {
+							mat[1][k] = mat[2][k] + mat[3][k];
+							mat[2][k] = 0;
+							mat[3][k] = 0;
+						}
+						else {//row1 != row0
+							if (mat[2][k] == 0) {
+								mat[1][k] = mat[3][k];
+								mat[3][k] = 0;
+							}
+							else {
+								mat[1][k] = mat[2][k];
+								mat[2][k] = mat[3][k]; 
+								mat[3][k] = 0;
+							}
+							
+						}
+					}
+					else if (mat[1][k] == mat[2][k]) {
+						mat[1][k] += mat[2][k];
+						if (mat[3][k] != 0) {
+							mat[2][k] = mat[3][k];
+							mat[3][k] = 0;
+						}
+						else {
+							mat[2][k] = 0;
+						} 
+					}
+					else if ((mat[1][k] == mat[3][k]) && (mat[2][k]==0)) {
+						mat[1][k] += mat[3][k];
+						mat[3][k] = 0;
+					}
+					else if (mat[2][k] == mat[3][k]) {
+						mat[2][k] += mat[3][k];
+						mat[3][k] = 0;
+					}
+				}	
+				else if (mat[2][k] != 0) {
+					if (mat[0][k] == mat[2][k]) {
+						mat[0][k] += mat[2][k];
+						mat[2][k] = 0;
+					} 
+					else {//[0][k]taken [1][k]empty [2][k]taken
+						if (mat[2][k] == mat[3][k]) {
+							mat[1][k] = mat[2][k] + mat[3][k];
+							mat[2][k] = 0;
+							mat[3][k] = 0;
+						}
+						else {
+							mat[1][k] = mat[2][k];
+							mat[2][k] = 0;
+						}
+					}
+				}
+				else if (mat[3][k] != 0) {
+					if (mat[0][k] == mat[3][k]) {
+						mat[0][k] += mat[3][k];
+						mat[3][k] = 0;
+					} 
+				}
+			}
+			else {//mat[0][k] empty
+				if (mat[1][k] != 0) {
+					if (mat[2][k] != 0) {
+						if (mat[1][k] == mat[2][k]) {
+							mat[0][k] = mat[1][k] + mat[2][k];
+							mat[1][k] = mat[3][k];
+							mat[2][k] = 0;
+							mat[3][k] = 0;
+						}
+						else {//[1][k] != [2][k] AND [0][k] is empty
+							if (mat[3][k] != 0) {
+								if (mat[2][k] == mat[3][k]) {
+									mat[0][k] = mat[1][k];
+									mat[1][k] = mat[2][k] + mat[3][k];
+									mat[2][k] = 0;
+									mat[3][k] = 0;
+								}
+								else {
+									mat[0][k] = mat[1][k];
+									mat[1][k] = mat[2][k];
+									mat[2][k] = mat[3][k];
+									mat[3][k] = 0;
+								}
+							}
+							else {
+								mat[0][k] = mat[1][k];
+								mat[1][k] = mat[2][k];
+								mat[2][k] = 0;
+							}			
+						}
+					}
+					else {//[0][k] empty, [1][k] occupied, [2][k] empty
+						if (mat[1][k] == mat[3][k]) {
+							mat[0][k] = mat[1][k] + mat[3][k];
+							mat[1][k] = 0;
+							mat[3][k] = 0;
+						}
+						else {
+							mat[0][k] = mat[1][k];
+							mat[1][k] = mat[3][k];
+							mat[3][k] = 0;
+						}
+					}
+				}
+				else {//mat[1][k] AND mat[0][k] empty
+					if (mat[2][k] != 0) {
+						if (mat[3][k] != 0) {
+							if (mat[2][k] == mat[3][k]) {
+								mat[0][k] = mat[2][k] + mat[3][k];
+								mat[2][k] = 0;
+								mat[3][k] = 0;
+							}
+							else {
+								mat[0][k] = mat[2][k];
+								mat[1][k] = mat[3][k];
+								mat[2][k] = 0;
+								mat[3][k] = 0;
+							}
+						}
+						else {
+							mat[0][k] = mat[2][k];
+							mat[2][k] = 0;
+						}
+					} 
+					else {
+						mat[0][k] = mat[3][k];
+						mat[3][k] = 0;
+					}
+				}
+			}	
+		}
+	}
 
 
 	public void shiftRight()
@@ -160,10 +300,7 @@ public class Grid {
 		
 	}
 	
-	public void shiftUp()
-	{
-		
-	}
+	
 	
 	public void shiftLeft()
 	{
