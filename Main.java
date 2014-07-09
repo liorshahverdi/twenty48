@@ -33,102 +33,11 @@ public class Main {
 		Grid mainGrid = new Grid();
 		
 		int[][] mat = mainGrid.getGrid();
-		
-		/*
-		mainGrid.setTile(2,0,2);
-		mainGrid.setTile(1,0,2);
-		mainGrid.setTile(0,0,2);
-		//this works
-		*/
-		
-		/*
-		mainGrid.setTile(1,0,2);
-		mainGrid.setTile(2,0,2);
-		//this works
-		*/
-		
-		/*
-		mainGrid.setTile(3, 0, 2);
-		mainGrid.setTile(2, 0, 2);
-		mainGrid.setTile(1, 0, 4);
-		*/
-		
-		/*
-		mainGrid.setTile(3, 0, 2);
-		mainGrid.setTile(2, 0, 2);
-		mainGrid.setTile(1, 0, 4);
-		mainGrid.setTile(0, 0, 4);
-		//this works
-		*/
-		
-		/*
-		mainGrid.setTile(3,0,2);
-		mainGrid.setTile(0,0,2);
-		//this works
-		*/
-		
-		/*
-		mainGrid.setTile(3,0,2);
-		mainGrid.setTile(1,0,2);
-		//this works
-		*/
-		
-		/*
-		mainGrid.setTile(3,0,2);
-		mainGrid.setTile(2,0,2);
-		//this works
-		*/
-		
-		/*
-		mainGrid.setTile(0,0,2);
-		mainGrid.setTile(1,0,2);
-		//this works
-		*/
-		
-		/*
-		mainGrid.setTile(2,0,2);
-		mainGrid.setTile(1,0,2);
-		//this works
-		*/
-		
-		/*
-		mainGrid.setTile(2,0,16);
-		mainGrid.setTile(1,0,2);
-		//this works
-		*/
 
-		/*
-		mainGrid.setTile(0,0,2);
-		mainGrid.setTile(1,0,2);
-		mainGrid.setTile(2,0,16);
-		//this works
-		*/
-
-		/*
-		mainGrid.setTile(1,0,2);
-		mainGrid.setTile(2,0,2);
-		mainGrid.setTile(3,0,16);
-		//this works
-		*/
-
-		/*
-		mainGrid.setTile(2,0,16);
-		mainGrid.setTile(1,0,4);
-		mainGrid.setTile(0,0,16);
-		//this works
-		*/
-
-		/*
-		mainGrid.setTile(0,0,4);
-		mainGrid.setTile(1,0,4);
-		mainGrid.setTile(2,0,16);
-		mainGrid.setTile(3,0,8);
-		*/
-
-		mainGrid.setTile(0,2,128);
-		mainGrid.setTile(1,2,128);
-		mainGrid.setTile(2,2,16);
-		mainGrid.setTile(3,2,0);
+		mainGrid.setTile(0,2,0);
+		mainGrid.setTile(1,2,0);
+		mainGrid.setTile(2,2,0);
+		mainGrid.setTile(3,2,128);
 
 		printMat(mat);
 		System.out.println("\n---------------------\n");
