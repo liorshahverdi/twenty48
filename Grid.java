@@ -11,117 +11,130 @@ public class Grid {
 
 	public void shiftDown()
 	{
-		if (mat[3][0] != 0) {
-			if (mat[2][0] != 0) {
-				if (mat[3][0] == mat[2][0]) {
-					mat[3][0] += mat[2][0];
-					mat[2][0] = 0;
-					if ( (mat[1][0] != 0) && (mat[0][0] != 0) && (mat[1][0] == mat[0][0])) {
-						mat[2][0] = mat[1][0] + mat[0][0];
-						mat[1][0] = 0;
-						mat[0][0] = 0;
+		for (int k=0; k<4; k++) {
+			if (mat[3][k] != 0) {
+				if (mat[2][k] != 0) {
+					if (mat[3][k] == mat[2][k]) {
+						mat[3][k] += mat[2][k];
+						mat[2][k] = 0;
+						if ( (mat[1][k] != 0) && (mat[0][k] != 0) && (mat[1][k] == mat[0][k]) ) {
+							mat[2][k] = mat[1][k] + mat[0][k];
+							mat[1][k] = 0;
+							mat[0][k] = 0;
+						}
+						else {
+							mat[2][k] = mat[1][k];
+							mat[1][k] = mat[0][k]; 
+							mat[0][k] = 0;
+						}
 					}
-					else {
-						mat[2][0] = mat[1][0];
-						mat[1][0] = mat[0][0]; 
-						mat[0][0] = 0;
+					else if (mat[2][k] == mat[1][k]) {
+						mat[2][k] += mat[1][k];
+						if (mat[0][k] != 0) {
+							mat[1][k] = mat[0][k];
+							mat[0][k] = 0;
+						}
+						else {
+							mat[1][k] = 0;
+						} 
+					}
+					else if (mat[1][k] == mat[0][k]) {
+						mat[1][k] += mat[0][k];
+						mat[0][k] = 0;
+					}
+				}	
+				else if (mat[1][k] != 0) {
+					if (mat[3][k] == mat[1][k]) {
+						mat[3][k] += mat[1][k];
+						mat[1][k] = 0;
+					} 
+					else {//[3][k]taken [2][k]empty [1][k]taken
+						if (mat[1][k] == mat[0][k]) {
+							mat[2][k] = mat[1][k] + mat[0][k];
+							mat[1][k] = 0;
+							mat[0][k] = 0;
+						}
 					}
 				}
-				else if (mat[2][0] == mat[1][0]) {
-					mat[2][0] += mat[1][0];
-					if (mat[0][0] != 0) {
-						mat[1][0] = mat[0][0];
-						mat[0][0] = 0;
-					}
-					else {
-						mat[1][0] = 0;
+				else if (mat[0][k] != 0) {
+					if (mat[3][k] == mat[0][k]) {
+						mat[3][k] += mat[0][k];
+						mat[0][k] = 0;
 					} 
 				}
-			}	
-			else if (mat[1][0] != 0) {
-				if (mat[3][0] == mat[1][0]) {
-					mat[3][0] += mat[1][0];
-					mat[1][0] = 0;
-				} 
 			}
-			else if (mat[0][0] != 0) {
-				if (mat[3][0] == mat[0][0]) {
-					mat[3][0] += mat[0][0];
-					mat[0][0] = 0;
-				} 
-			}
-		}
-		
-		else {//mat[3][0] empty
-			if (mat[2][0] != 0) {
-				if (mat[1][0] != 0) {
-					if (mat[2][0] == mat[1][0]) {
-						mat[3][0] = mat[2][0] + mat[1][0];
-						mat[2][0] = mat[0][0];
-						mat[1][0] = 0;
-						mat[0][0] = 0;
-					}
-					else {//[2][0] != [1][0] AND [3][0] is empty
-						if (mat[0][0] != 0) {
-							if (mat[1][0] == mat[0][0]) {
-								mat[3][0] = mat[2][0];
-								mat[2][0] = mat[1][0] + mat[0][0];
-								mat[1][0] = 0;
-								mat[0][0] = 0;
+			else {//mat[3][k] empty
+				if (mat[2][k] != 0) {
+					if (mat[1][k] != 0) {
+						if (mat[2][k] == mat[1][k]) {
+							mat[3][k] = mat[2][k] + mat[1][k];
+							mat[2][k] = mat[0][k];
+							mat[1][k] = 0;
+							mat[0][k] = 0;
+						}
+						else {//[2][k] != [1][k] AND [3][k] is empty
+							if (mat[0][k] != 0) {
+								if (mat[1][k] == mat[0][k]) {
+									mat[3][k] = mat[2][k];
+									mat[2][k] = mat[1][k] + mat[0][k];
+									mat[1][k] = 0;
+									mat[0][k] = 0;
+								}
+								else {
+									mat[3][k] = mat[2][k];
+									mat[2][k] = mat[1][k];
+									mat[1][k] = mat[0][k];
+									mat[0][k] = 0;
+								}
 							}
 							else {
-								mat[3][0] = mat[2][0];
-								mat[2][0] = mat[1][0];
-								mat[1][0] = mat[0][0];
-								mat[0][0] = 0;
+								mat[3][k] = mat[2][k];
+								mat[2][k] = mat[1][k];
+								mat[1][k] = 0;
+							}			
+						}
+					}
+					else {//[3][k] empty, [2][k] occupied, [1][k] empty
+						if (mat[2][k] == mat[0][k]) {
+							mat[3][k] = mat[2][k] + mat[0][k];
+							mat[2][k] = 0;
+							mat[0][k] = 0;
+						}
+						else {
+							mat[3][k] = mat[2][k];
+							mat[2][k] = mat[0][k];
+							mat[0][k] = 0;
+						}
+					}
+				}
+				else {//mat[2][k] AND mat[3][k] empty
+					if (mat[1][k] != 0) {
+						if (mat[0][k] != 0) {
+							if (mat[1][k] == mat[0][k]) {
+								mat[3][k] = mat[1][k] + mat[0][k];
+								mat[1][k] = 0;
+								mat[0][k] = 0;
+							}
+							else {
+								mat[3][k] = mat[1][k];
+								mat[2][k] = mat[0][k];
+								mat[1][k] = 0;
+								mat[0][k] = 0;
 							}
 						}
 						else {
-							mat[3][0] = mat[2][0];
-							mat[2][0] = mat[1][0];
-							mat[1][0] = 0;
-						}			
-					}
-				}
-				else {//[3][0] empty, [2][0] occupied, [1][0] empty
-					if (mat[2][0] == mat[0][0]) {
-						mat[3][0] = mat[2][0] + mat[0][0];
-						mat[2][0] = 0;
-						mat[0][0] = 0;
-					}
-					else {
-						mat[3][0] = mat[2][0];
-						mat[2][0] = mat[0][0];
-						mat[0][0] = 0;
-					}
-				}
-			}
-			else {//mat[2][0] AND mat[3][0] empty
-				if (mat[1][0] != 0) {
-					if (mat[0][0] != 0) {
-						if (mat[1][0] == mat[0][0]) {
-							mat[3][0] = mat[1][0] + mat[0][0];
-							mat[1][0] = 0;
-							mat[0][0] = 0;
+							mat[3][k] = mat[1][k];
+							mat[1][k] = 0;
 						}
-						else {
-							mat[3][0] = mat[1][0];
-							mat[2][0] = mat[0][0];
-							mat[1][0] = 0;
-							mat[0][0] = 0;
-						}
-					}
+					} 
 					else {
-						mat[3][0] = mat[1][0];
-						mat[1][0] = 0;
+						mat[3][k] = mat[0][k];
+						mat[0][k] = 0;
 					}
-				} 
-				else {
-					mat[3][0] = mat[0][0];
-					mat[0][0] = 0;
 				}
-			}
+			}	
 		}
+		
 	}
 	
 
