@@ -22,10 +22,17 @@ public class Grid {
 							mat[1][k] = 0;
 							mat[0][k] = 0;
 						}
-						else {
-							mat[2][k] = mat[1][k];
-							mat[1][k] = mat[0][k]; 
-							mat[0][k] = 0;
+						else {//row1 != row0
+							if (mat[1][k] == 0) {
+								mat[2][k] = mat[0][k];
+								mat[0][k] = 0;
+							}
+							else {
+								mat[2][k] = mat[1][k];
+								mat[1][k] = mat[0][k]; 
+								mat[0][k] = 0;
+							}
+							
 						}
 					}
 					else if (mat[2][k] == mat[1][k]) {

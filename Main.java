@@ -125,10 +125,10 @@ public class Main {
 		mainGrid.setTile(3,0,8);
 		*/
 
-		mainGrid.setTile(0,2,8);
-		mainGrid.setTile(1,2,8);
-		mainGrid.setTile(2,2,4);
-		mainGrid.setTile(3,2,2);
+		mainGrid.setTile(0,2,128);
+		mainGrid.setTile(1,2,128);
+		mainGrid.setTile(2,2,16);
+		mainGrid.setTile(3,2,0);
 
 		printMat(mat);
 		System.out.println("\n---------------------\n");
