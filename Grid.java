@@ -160,12 +160,12 @@ public class Grid {
 					if (mat[0][k] == mat[1][k]) {
 						mat[0][k] += mat[1][k];
 						mat[1][k] = 0;
-						if ( (mat[2][k] != 0) && (mat[3][k] != 0) && (mat[2][k] == mat[1][k]) ) {
+						if ( (mat[2][k] != 0) && (mat[3][k] != 0) && (mat[2][k] == mat[3][k]) ) {
 							mat[1][k] = mat[2][k] + mat[3][k];
 							mat[2][k] = 0;
 							mat[3][k] = 0;
 						}
-						else {//row1 != row0
+						else {
 							if (mat[2][k] == 0) {
 								mat[1][k] = mat[3][k];
 								mat[3][k] = 0;
@@ -201,8 +201,12 @@ public class Grid {
 					if (mat[0][k] == mat[2][k]) {
 						mat[0][k] += mat[2][k];
 						mat[2][k] = 0;
+						if (mat[3][k] != 0) {
+							mat[1][k] = mat[3][k];
+							mat[3][k] =0;
+						}
 					} 
-					else {//[0][k]taken [1][k]empty [2][k]taken
+					else {
 						if (mat[2][k] == mat[3][k]) {
 							mat[1][k] = mat[2][k] + mat[3][k];
 							mat[2][k] = 0;
@@ -221,7 +225,7 @@ public class Grid {
 					} 
 				}
 			}
-			else {//mat[0][k] empty
+			else {
 				if (mat[1][k] != 0) {
 					if (mat[2][k] != 0) {
 						if (mat[1][k] == mat[2][k]) {
@@ -230,7 +234,7 @@ public class Grid {
 							mat[2][k] = 0;
 							mat[3][k] = 0;
 						}
-						else {//[1][k] != [2][k] AND [0][k] is empty
+						else {//[2][k] != [1][k] AND [3][k] is empty
 							if (mat[3][k] != 0) {
 								if (mat[2][k] == mat[3][k]) {
 									mat[0][k] = mat[1][k];
@@ -252,7 +256,7 @@ public class Grid {
 							}			
 						}
 					}
-					else {//[0][k] empty, [1][k] occupied, [2][k] empty
+					else {//[3][k] empty, [2][k] occupied, [1][k] empty
 						if (mat[1][k] == mat[3][k]) {
 							mat[0][k] = mat[1][k] + mat[3][k];
 							mat[1][k] = 0;
@@ -265,7 +269,7 @@ public class Grid {
 						}
 					}
 				}
-				else {//mat[1][k] AND mat[0][k] empty
+				else {//mat[2][k] AND mat[3][k] empty
 					if (mat[2][k] != 0) {
 						if (mat[3][k] != 0) {
 							if (mat[2][k] == mat[3][k]) {
@@ -294,13 +298,10 @@ public class Grid {
 		}
 	}
 
-
 	public void shiftRight()
 	{
 		
 	}
-	
-	
 	
 	public void shiftLeft()
 	{
