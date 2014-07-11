@@ -156,8 +156,7 @@ public class Grid {
 					}
 				}
 			}	
-		}
-		
+		}	
 	}
 	
 	public void shiftUp()
