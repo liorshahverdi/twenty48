@@ -41,7 +41,8 @@ public class Main {
 
 		printMat(mat);
 		System.out.println("\n---------------------\n");
-		mainGrid.shiftRight();
+		//mainGrid.shiftRight();
+		mainGrid.shiftLeft();
 
 		printMat(mat);
 	}
