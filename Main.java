@@ -34,10 +34,10 @@ public class Main {
 		
 		int[][] mat = mainGrid.getGrid();
 
-		mainGrid.setTile(3,0,16);
-		mainGrid.setTile(3,1,16);
+		mainGrid.setTile(3,0,4096);
+		mainGrid.setTile(3,1,32);
 		mainGrid.setTile(3,2,32);
-		mainGrid.setTile(3,3,32);
+		mainGrid.setTile(3,3,4096);
 
 		printMat(mat);
 		System.out.println("\n---------------------\n");
