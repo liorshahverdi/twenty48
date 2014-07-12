@@ -461,9 +461,9 @@ public class Grid {
 	public void shiftLeft()
 	{// [row0][colk] -> [rowk][col0]
 		for (int k=0; k<4; k++) {
-			if (mat[0][k] != 0) {
-				if (mat[1][k] != 0) {
-					if (mat[0][k] == mat[1][k]) {
+			if (mat[k][0] != 0) {
+				if (mat[k][1] != 0) {
+					if (mat[k][0] == mat[k][1]) {
 						mat[0][k] += mat[1][k];
 						mat[1][k] = 0;
 						if ( (mat[2][k] != 0) && (mat[3][k] != 0) && (mat[2][k] == mat[3][k]) ) {
