@@ -114,14 +114,14 @@ public class Game {
 		Grid mainGrid = new Grid();
 		int[][] mat = mainGrid.getGrid();
 		mainGrid.setTile(0,0,4);
-		mainGrid.setTile(2,0,2);
-		//mainGrid.setTile(1,0,2);
-		mainGrid.setTile(3,0,4);
+		mainGrid.setTile(0,1,2);
+		mainGrid.setTile(0,2,0);
+		mainGrid.setTile(0,3,4);
 
 		System.out.println("********************");
 		printMat(mat);
 		System.out.println("********************");
-		mainGrid.shiftUp();
+		mainGrid.shiftRight();
 		printMat(mat);
 		System.out.println("********************");
 		//*/

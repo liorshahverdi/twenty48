@@ -379,6 +379,10 @@ public class Grid {
 						else {
 							mat[k][2] = mat[k][1];
 							mat[k][1] = 0;
+							if (mat[k][0] != 0) {
+								mat[k][1] = mat[k][0];
+								mat[k][0] = 0;
+							}
 						}
 					}
 				}
@@ -529,6 +533,10 @@ public class Grid {
 						else {
 							mat[k][1] = mat[k][2];
 							mat[k][2] = 0;
+							if (mat[k][3] != 0) {
+								mat[k][2] = mat[k][3];
+								mat[k][3] = 0;
+							}
 						}
 					}
 				}
