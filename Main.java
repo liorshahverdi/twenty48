@@ -30,8 +30,9 @@ public class Main {
 		}
 	}
 
-	public static void insertNumToRandomOpenCell(int[][] x)
+	public static void insertNewNumber(int[][] x)
 	{
+		int[] numOptions = {2,4};
 		ArrayList<Cell> freeCells = new ArrayList<Cell>();
 		for (int i = 0; i < 4; i++) {
 			for (int j=0; j < 4; j++) {
@@ -41,8 +42,13 @@ public class Main {
 				}
 			}
 		}
-
-		System.out.println("Length = "+freeCells.size());
+		//System.out.println("Length = "+freeCells.size());
+		if (freeCells.size() != 0) {
+			int numberToInsert = numOptions[randInt(0,1)];
+			Cell roc = freeCells.get(randInt(0, freeCells.size()-1));
+			//System.out.println("------>"+ randomOpenCell.toString());
+			x[roc.getRow()][roc.getCol()] = numberToInsert;
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -55,10 +61,10 @@ public class Main {
 		mainGrid.setTile(3,2,0);
 		mainGrid.setTile(3,3,4096);
 
-		//printMat(mat);
-		insertNumToRandomOpenCell(mat);
+		printMat(mat);
+		insertNewNumber(mat);
 		System.out.println("\n---------------------\n");
 
-		//printMat(mat);
+		printMat(mat);
 	}
 }

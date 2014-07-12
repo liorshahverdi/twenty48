@@ -10,4 +10,6 @@ public class Cell {
 	public int getRow() { return row; }
 
 	public int getCol() { return col; }
+
+	public String toString() { return "row = "+row+"\tcol = "+col; }
 }
