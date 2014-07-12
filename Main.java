@@ -43,6 +43,7 @@ public class Main {
 		System.out.println("\n---------------------\n");
 		mainGrid.shiftUp();
 		//mainGrid.shiftDown();
+
 		printMat(mat);
 	}
 
