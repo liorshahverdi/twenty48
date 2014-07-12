@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -28,22 +29,36 @@ public class Main {
 		    System.out.println();
 		}
 	}
+
+	public static void insertNumToRandomOpenCell(int[][] x)
+	{
+		ArrayList<Cell> freeCells = new ArrayList<Cell>();
+		for (int i = 0; i < 4; i++) {
+			for (int j=0; j < 4; j++) {
+				if (x[i][j] == 0) {
+					Cell openCell = new Cell(i,j);
+					freeCells.add(openCell);
+				}
+			}
+		}
+
+		System.out.println("Length = "+freeCells.size());
+	}
 	
 	public static void main(String[] args) {
 		Grid mainGrid = new Grid();
 		
 		int[][] mat = mainGrid.getGrid();
 
-		mainGrid.setTile(3,0,4096);
-		mainGrid.setTile(3,1,32);
-		mainGrid.setTile(3,2,32);
+		mainGrid.setTile(3,0,0);
+		mainGrid.setTile(3,1,0);
+		mainGrid.setTile(3,2,0);
 		mainGrid.setTile(3,3,4096);
 
-		printMat(mat);
+		//printMat(mat);
+		insertNumToRandomOpenCell(mat);
 		System.out.println("\n---------------------\n");
-		//mainGrid.shiftRight();
-		mainGrid.shiftLeft();
 
-		printMat(mat);
+		//printMat(mat);
 	}
 }
