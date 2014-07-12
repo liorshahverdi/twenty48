@@ -98,32 +98,37 @@ public class Game {
 	}
 		
 	public static void main(String[] args) {
-		/*
+		
 		Scanner myScan = new Scanner(System.in);
 		System.out.print("Welcome to LS 2048!\nUse WASD to play.\nReady to Start? (y/n)\t");
 		String initChar = myScan.next();
 		
 		if (initChar.toUpperCase().equals("Y")) startGame();
 		else System.out.println("Goodbye!");
-		*/
-
-		
-		//*Shift Tester
-		//*
-		//*
+				
+		/*Shift Tester
+		*
+		*
 		Grid mainGrid = new Grid();
 		int[][] mat = mainGrid.getGrid();
+		
 		mainGrid.setTile(0,0,4);
-		mainGrid.setTile(0,1,2);
-		mainGrid.setTile(0,2,0);
-		mainGrid.setTile(0,3,4);
+		mainGrid.setTile(0,1,0);
+		mainGrid.setTile(0,2,2);
+		mainGrid.setTile(0,3,4); //shiftRight
+		
 
+		mainGrid.setTile(0,0,4);
+		mainGrid.setTile(1,0,2);
+		mainGrid.setTile(2,0,0);
+		mainGrid.setTile(3,0,4);
+		
 		System.out.println("********************");
 		printMat(mat);
 		System.out.println("********************");
 		mainGrid.shiftRight();
 		printMat(mat);
 		System.out.println("********************");
-		//*/
+		*/
 	}
 }

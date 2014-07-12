@@ -208,6 +208,10 @@ public class Grid {
 						mat[2][k] += mat[3][k];
 						mat[3][k] = 0;
 					}
+					else if (mat[2][k] == 0){
+						mat[2][k] = mat[3][k];
+						mat[3][k] = 0;
+					}
 				}	
 				else if (mat[2][k] != 0) {
 					if (mat[0][k] == mat[2][k]) {
@@ -358,6 +362,10 @@ public class Grid {
 					}
 					else if (mat[k][1] == mat[k][0]) {
 						mat[k][1] += mat[k][0];
+						mat[k][0] = 0;
+					}
+					else if ((mat[k][1] == 0) && (mat[k][0]!= 0) ) {
+						mat[k][1] = mat[k][0];
 						mat[k][0] = 0;
 					}
 				}	
@@ -513,6 +521,12 @@ public class Grid {
 					else if (mat[k][2] == mat[k][3]) {
 						mat[k][2] += mat[k][3];
 						mat[k][3] = 0;
+					}
+					else {
+						if ((mat[k][2] == 0) && (mat[k][3] != 0)) {
+							mat[k][2] = mat[k][3];
+							mat[k][3] = 0;
+						}
 					}
 				}	
 				else if (mat[k][2] != 0) {
