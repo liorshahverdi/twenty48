@@ -53,6 +53,11 @@ public class Grid {
 						mat[1][k] += mat[0][k];
 						mat[0][k] = 0;
 					}
+					else if ((mat[1][k] == 0) && (mat[0][k] != 0))
+					{
+						mat[1][k] = mat[0][k];
+						mat[0][k] = 0;
+					}
 				}	
 				else if (mat[1][k] != 0) {
 					if (mat[3][k] == mat[1][k]) {
