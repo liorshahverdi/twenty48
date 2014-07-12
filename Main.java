@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -30,7 +31,7 @@ public class Main {
 		}
 	}
 
-	public static void insertNewNumber(int[][] x)
+	public static boolean insertNewNumber(int[][] x)
 	{
 		int[] numOptions = {2,4};
 		ArrayList<Cell> freeCells = new ArrayList<Cell>();
@@ -48,23 +49,45 @@ public class Main {
 			Cell roc = freeCells.get(randInt(0, freeCells.size()-1));
 			//System.out.println("------>"+ randomOpenCell.toString());
 			x[roc.getRow()][roc.getCol()] = numberToInsert;
+			return true;
 		}
+		else return false;
 	}
-	
-	public static void main(String[] args) {
+
+	public static void startGame() {
 		Grid mainGrid = new Grid();
-		
 		int[][] mat = mainGrid.getGrid();
+		mainGrid.setTile(2,0,2);
+		mainGrid.setTile(3,2,2);
+		boolean keepPlaying = true;
+		//Scanner gameScan = new Scanner(System.in);
 
-		mainGrid.setTile(3,0,0);
-		mainGrid.setTile(3,1,0);
-		mainGrid.setTile(3,2,0);
-		mainGrid.setTile(3,3,4096);
+		while (keepPlaying){
+			System.out.println("--------------------------");
+			printMat(mat);
+			System.out.println("--------------------------");
+			Scanner gameScan = new Scanner(System.in);
+			String nextShift = gameScan.next().toUpperCase();
+			
+			if (nextShift.equals("W")) mainGrid.shiftUp();
+			else if (nextShift.equals("A")) mainGrid.shiftLeft();
+			else if (nextShift.equals("S")) mainGrid.shiftDown();
+			else if (nextShift.equals("D")) mainGrid.shiftRight();
+			
+			keepPlaying = insertNewNumber(mat);
+			/*System.out.println("--------------------------");
+			printMat(mat);
+			System.out.println("--------------------------");*/
+		}
 
-		printMat(mat);
-		insertNewNumber(mat);
-		System.out.println("\n---------------------\n");
-
-		printMat(mat);
+	}
+		
+	public static void main(String[] args) {
+		Scanner myScan = new Scanner(System.in);
+		System.out.print("Welcome to LS 2048!\nUse WASD to play.\nReady to Start? (y/n)\t");
+		String initChar = myScan.next();
+		
+		if (initChar.toUpperCase().equals("Y")) startGame();
+		else System.out.println("Goodbye!");
 	}
 }
