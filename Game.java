@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Game {
 
 	
 	public static int randInt(int min, int max) {
