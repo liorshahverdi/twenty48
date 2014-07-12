@@ -54,13 +54,25 @@ public class Main {
 		else return false;
 	}
 
+	public static boolean searchForIt(int[][] x)
+	{
+		for (int i = 0; i < 4; i++) {
+			for (int j=0; j < 4; j++) {
+				if (x[i][j] == 2048) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 	public static void startGame() {
 		Grid mainGrid = new Grid();
 		int[][] mat = mainGrid.getGrid();
 		mainGrid.setTile(2,0,2);
 		mainGrid.setTile(3,2,2);
 		boolean keepPlaying = true;
-		//Scanner gameScan = new Scanner(System.in);
+		boolean twenty48 = false;
 
 		while (keepPlaying){
 			System.out.println("--------------------------");
@@ -75,19 +87,22 @@ public class Main {
 			else if (nextShift.equals("D")) mainGrid.shiftRight();
 			
 			keepPlaying = insertNewNumber(mat);
-			/*System.out.println("--------------------------");
-			printMat(mat);
-			System.out.println("--------------------------");*/
+			twenty48 = searchForIt(mat);
+			if (twenty48) {
+				System.out.println("YOU REACHED 2048!");
+				System.exit(0);
+			}
 		}
+		System.out.println("Game Over! :'(");
 
 	}
 		
 	public static void main(String[] args) {
-		Scanner myScan = new Scanner(System.in);
+		/*Scanner myScan = new Scanner(System.in);
 		System.out.print("Welcome to LS 2048!\nUse WASD to play.\nReady to Start? (y/n)\t");
 		String initChar = myScan.next();
 		
 		if (initChar.toUpperCase().equals("Y")) startGame();
-		else System.out.println("Goodbye!");
+		else System.out.println("Goodbye!");*/
 	}
 }
