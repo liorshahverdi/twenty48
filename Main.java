@@ -36,13 +36,13 @@ public class Main {
 
 		mainGrid.setTile(0,2,32);
 		mainGrid.setTile(1,2,32);
-		mainGrid.setTile(2,2,0);
-		mainGrid.setTile(3,2,32);
+		mainGrid.setTile(2,2,128);
+		mainGrid.setTile(3,2,64);
 
 		printMat(mat);
 		System.out.println("\n---------------------\n");
-		//mainGrid.shiftUp();
-		mainGrid.shiftDown();
+		mainGrid.shiftUp();
+		//mainGrid.shiftDown();
 		printMat(mat);
 	}
 
