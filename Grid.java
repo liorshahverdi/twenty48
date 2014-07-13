@@ -9,6 +9,31 @@ public class Grid {
 	
 	public void setTile(int r, int c, int val) { mat[r][c] = val; }
 
+	public int getTile(int r, int c) { return mat[r][c]; }
+
+	public boolean equals(int[][] x) {
+		for (int i = 0; i < 4; i++) {
+			for (int j=0; j < 4; j++) {
+				/*System.out.println("xij->"+x[i][j]);
+				System.out.println("ths->"+this.getTile(i,j));
+				System.out.println(); */
+				if (x[i][j] == this.getTile(i,j)) continue;
+				else return false;
+			}
+		}
+		return true;
+	}
+
+	public Grid deepCopy() {
+		Grid temp = new Grid();
+		for (int i = 0; i < 4; i++) {
+			for (int j=0; j < 4; j++) {
+				temp.setTile(i,j,this.getTile(i,j));
+			}
+		}
+		return temp;
+	}
+
 	public void shiftDown()
 	{
 		for (int k=0; k<4; k++) {
@@ -163,7 +188,7 @@ public class Grid {
 			}	
 		}	
 	}
-	
+
 	public void shiftUp()
 	{
 		for (int k=0; k<4; k++) {
