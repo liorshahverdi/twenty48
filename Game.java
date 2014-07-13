@@ -194,7 +194,7 @@ public class Game {
 				System.out.println("Goodbye!");
 				break;	
 			}
-			System.out.println("Game Over!! :'(\tPlay Again? (y/n)");
+			System.out.println("Game Over!! :'(\t\tPlay Again? (y/n)");
 			String playAgain = myScan.next();
 			if (playAgain.toUpperCase().equals("Y")) play = true;
 			else {
