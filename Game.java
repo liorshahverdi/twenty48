@@ -31,6 +31,74 @@ public class Game {
 		}
 	}
 
+	public static void convert(int[][] x, int num1)
+	{
+		int[] options = {2,4};
+		if (num1 == 1) {
+			x[0][0] = options[randInt(0,1)];
+		}
+		else if (num1 == 2) {
+			x[0][1] = options[randInt(0,1)];
+		}
+		else if (num1 == 3) {
+			x[0][2] = options[randInt(0,1)];
+		}
+		else if (num1 == 4) {
+			x[0][3] = options[randInt(0,1)];
+		}
+		else if (num1 == 5) {
+			x[1][0] = options[randInt(0,1)];
+		}
+		else if (num1 == 6) {
+			x[1][1] = options[randInt(0,1)];
+		}
+		else if (num1 == 7) {
+			x[1][2] = options[randInt(0,1)];
+		}
+		else if (num1 == 8) {
+			x[1][3] = options[randInt(0,1)];
+		}
+		else if (num1 == 9) {
+			x[2][0] = options[randInt(0,1)];
+		}
+		else if (num1 == 10) {
+			x[2][1] = options[randInt(0,1)];
+		}
+		else if (num1 == 11) {
+			x[2][2] = options[randInt(0,1)];
+		}
+		else if (num1 == 12) {
+			x[2][3] = options[randInt(0,1)];
+		}
+		else if (num1 == 13) {
+			x[3][0] = options[randInt(0,1)];
+		}
+		else if (num1 == 14) {
+			x[3][1] = options[randInt(0,1)];
+		}
+		else if (num1 == 15) {
+			x[3][2] = options[randInt(0,1)];
+		}
+		else if (num1 == 16) {
+			x[3][3] = options[randInt(0,1)];
+		}
+
+	}
+
+	public static void initialize(int[][] x) {
+		int[] arr = new int[16];
+		int num1 = randInt(1, 16);
+		int num2 = randInt(1, 16);
+		while (num1 == num2) {
+			num2 = randInt(1,16);
+		}
+		//System.out.println("1 = "+num1+"\t\t2 = "+num2)
+
+		convert(x, num1);
+		convert(x, num2);
+
+	}
+
 	public static boolean insertNewNumber(int[][] x)
 	{
 		int[] numOptions = {2,4};
@@ -127,8 +195,7 @@ public class Game {
 	public static void startGame() {
 		Grid mainGrid = new Grid();
 		int[][] mat = mainGrid.getGrid();
-		mainGrid.setTile(0,0,2);
-		mainGrid.setTile(0,2,2);
+		initialize(mat);
 		boolean keepPlaying = true;
 		boolean twenty48 = false;
 
