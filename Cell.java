@@ -7,9 +7,15 @@ public class Cell {
 		col = c;
 	}
 
-	public int getRow() { return row; }
+	public int getRow() {
+		return row;
+	}
 
-	public int getCol() { return col; }
+	public int getCol() {
+		return col;
+	}
 
-	public String toString() { return "row = "+row+"\tcol = "+col; }
+	public String toString() {
+		return "row = " + row + "\tcol = " + col;
+	}
 }
