@@ -1,3 +1,4 @@
+package twenty48;
 public class Grid {
 	private int[][] mat;
 	
