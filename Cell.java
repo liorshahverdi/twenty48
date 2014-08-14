@@ -1,4 +1,3 @@
-package twenty48;
 public class Cell {
 	private int row;
 	private int col;

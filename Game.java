@@ -1,4 +1,3 @@
-package twenty48;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -23,12 +22,13 @@ public class Game {
 	{
 		for (int[] row : x)
 		{
+			System.out.print("|\t");
 		    for (int value : row)
 		    {
 		    	if (value==0) System.out.print("-\t");
 		    	else System.out.print(value+"\t");
 		    }
-		    System.out.println();
+		    System.out.print("|\n");
 		}
 	}
 
@@ -201,9 +201,9 @@ public class Game {
 		boolean twenty48 = false;
 
 		while (keepPlaying){
-			System.out.println("--------------------------");
+			System.out.println("-----------------------------------------");
 			printMat(mat);
-			System.out.println("--------------------------");
+			System.out.println("-----------------------------------------");
 			if (canShiftAnything(mainGrid)) {
 				Scanner gameScan = new Scanner(System.in);
 				String nextShift = gameScan.next().toUpperCase();
