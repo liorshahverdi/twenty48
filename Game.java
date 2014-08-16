@@ -240,6 +240,7 @@ public class Game {
 				keepPlaying = insertNewNumber(mat);
 				twenty48 = searchForIt(mat);
 				if (twenty48) {
+					printMat(mat);
 					System.out.println("YOU REACHED 2048!");
 					System.exit(0);
 				}
