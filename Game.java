@@ -236,6 +236,10 @@ public class Game {
 						continue;
 					}
 				}
+				else if (nextShift.equals("Q")) {
+					keepPlaying = false;
+					break;
+				}
 				
 				keepPlaying = insertNewNumber(mat);
 				twenty48 = searchForIt(mat);
