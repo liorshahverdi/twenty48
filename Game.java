@@ -236,6 +236,10 @@ public class Game {
 						continue;
 					}
 				}
+				else{
+					System.out.println("That's not an option. W A S D friend..");
+					continue;
+				}
 				
 				keepPlaying = insertNewNumber(mat);
 				twenty48 = searchForIt(mat);
