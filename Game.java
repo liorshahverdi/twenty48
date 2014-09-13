@@ -236,6 +236,10 @@ public class Game {
 						continue;
 					}
 				}
+				else if (nextShift.equals("Q")) {
+					keepPlaying = false;
+					break;
+				}
 				else{
 					System.out.println("That's not an option. W A S D friend..");
 					continue;
