@@ -200,6 +200,7 @@ public class Game {
 		boolean keepPlaying = true;
 		boolean twenty48 = false;
 
+		//our big beluga
 		while (keepPlaying){
 			System.out.println("-----------------------------------------");
 			printMat(mat);
