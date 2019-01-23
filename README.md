@@ -1,4 +1,4 @@
 twenty48
 ========
 
-My attempt at 2048 with Java
+The popular 2048 for the command line. Written in Java.
